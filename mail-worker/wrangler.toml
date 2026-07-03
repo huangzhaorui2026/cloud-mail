@@ -1,9 +1,9 @@
-名称 = "cloud-mail"
-主入口 = "src/index.js"
-兼容日期 = "2025-06-04"
+name = "cloud-mail"
+main = "src/index.js"
+compatibility_date = "2025-06-04"
 keep_vars = true
 
-[可观测性]
+[observability]
 enabled = true
 
 #[[d1_databases]]
@@ -32,16 +32,16 @@ not_found_handling = "single-page-application"
 run_worker_first = true
 
 [triggers]
-crontab = ["0 16 * * *"]	#每天晚上12点执行每日任务,刷新分析缓存
+crons = ["0 16 * * *"]	#每天晚上12点执行每日任务,刷新分析缓存
 
 
 [vars]
 #ai_model = ""			#ai模型,不填默认使用@cf/meta/llama-3.1-8b-instruct
 #analysis_cache = false			#是否开启分析数据缓存
 #orm_log = false			#是否sql日志
-#domain = [“6666666666666666666666666666666666666666666666666666666666666666.buzz”]				#邮件域名可配置多个 示例: [“example1.com”,“example2.com”]
+#domain = ["666666666666666666666666666666666666666666666666666666666666666.buzz"]				#邮件域名可可配置多个 示例: ["example1.com","example2.com"]
 #admin = ""				#管理员的邮箱	示例: admin@example.com
 #jwt_secret = ""			#jwt令牌的密钥,随便填一串字符串
 
-【构建】
-命令 = “pnpm --prefix ../mail-vue install && pnpm --prefix ../mail-vue 运行 构建”
+[build]
+command = "pnpm --prefix ../mail-vue install && pnpm --prefix ../mail-vue run build"
